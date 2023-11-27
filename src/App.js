@@ -1,6 +1,10 @@
+import Home from "./components/pages/Home/Home";
+
 function App() {
   return (
-    <div>Hello world</div>
+    <div>
+      <Home />
+    </div>
   );
 }
 
