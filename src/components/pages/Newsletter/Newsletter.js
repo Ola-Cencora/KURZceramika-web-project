@@ -1,7 +1,7 @@
 const Newsletter = () => {
     return (
         <>
-        <h1>Contact</h1>
+        <h1>Newsletter</h1>
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>
