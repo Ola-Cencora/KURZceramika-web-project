@@ -1,0 +1,20 @@
+@import "../../../styles/settings.scss";
+
+.navigation {
+    list-style: none;
+
+    .link {
+        text-decoration: none;
+        font-family: $font-header;
+        font-size: 20px;
+        text-transform: lowercase;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        margin-left: $base-size * 3;
+
+        &:active {
+            color: $color-dark;
+        }
+    }
+}

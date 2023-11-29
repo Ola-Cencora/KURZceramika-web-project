@@ -1,0 +1,10 @@
+@import "../../../styles/settings.scss";
+
+.dot {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $color-main;
+    margin: 0 $base-size * 0.8;
+}

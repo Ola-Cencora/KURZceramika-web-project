@@ -3,6 +3,7 @@ import Gallery from "./components/pages/Gallery/Gallery";
 import Contact from "./components/pages/Contact/Contact";
 import Newsletter from "./components/pages/Newsletter/Newsletter";
 import ScrollToTop from "./components/features/ScrollToTop/ScrollToTop";
+import Navigation from "./components/views/Navigation/Navigation";
 import { useRef } from "react";
 
 function App() {
@@ -21,12 +22,13 @@ function App() {
   return (
     <div>
       <ScrollToTop />
-      <ul>
-        <li onClick={() => scrollToSection(aboutRef)}>O mnie</li>
-        <li onClick={() => scrollToSection(galleryRef)}>Galeria</li>
-        <li onClick={() => scrollToSection(contactRef)}>Kontakt</li>
-        <li onClick={() => scrollToSection(newsletterRef)}>Newsletter</li>
-      </ul>
+      <Navigation 
+        scrollToSection={scrollToSection}
+        aboutRef={aboutRef}
+        galleryRef={galleryRef}
+        contactRef={contactRef}
+        newsletterRef={newsletterRef}
+      />
       <div ref={aboutRef}><About /></div>
       <div ref={galleryRef}><Gallery /></div>
       <div ref={contactRef}><Contact /></div>
