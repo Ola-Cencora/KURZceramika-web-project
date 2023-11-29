@@ -5,7 +5,7 @@ import Dot from '../../common/Dot/Dot';
 
 const Navigation = ({ scrollToSection, aboutRef, galleryRef, contactRef, newsletterRef }) => {
     return (
-        <Navbar className={styles.navigation}>
+        <Navbar className={styles.navigation} fixed="top">
             <Navbar.Brand>logo</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
