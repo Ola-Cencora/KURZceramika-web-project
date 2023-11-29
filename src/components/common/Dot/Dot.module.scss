@@ -8,3 +8,7 @@
     background-color: $color-main;
     margin: 0 $base-size * 0.8;
 }
+
+.active {
+    background-color: $color-special;
+}

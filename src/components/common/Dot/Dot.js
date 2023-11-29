@@ -1,8 +1,9 @@
 import styles from './Dot.module.scss';
+import clsx from 'clsx';
 
-const Dot = () => {
+const Dot = ({ isActive }) => {
     return (
-        <span className={styles.dot}></span>
+        <span className={clsx(styles.dot, isActive ? styles.active : '')}></span>
     );
 };
 
