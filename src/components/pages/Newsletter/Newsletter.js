@@ -1,7 +1,9 @@
+import SectionTitle from "../../common/SectionTitle/SectionTitle";
+
 const Newsletter = () => {
     return (
         <>
-        <h1>Newsletter</h1>
+        <SectionTitle title="newsletter" />
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>

@@ -1,7 +1,9 @@
+import SectionTitle from "../../common/SectionTitle/SectionTitle";
+
 const About = () => {
     return (
         <>
-        <h1>About</h1>
+        <SectionTitle title="o mnie" />
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>

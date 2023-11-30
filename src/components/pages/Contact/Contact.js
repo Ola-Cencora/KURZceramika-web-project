@@ -1,7 +1,9 @@
+import SectionTitle from "../../common/SectionTitle/SectionTitle";
+
 const Contact = () => {
     return (
         <>
-        <h1>Contact</h1>
+        <SectionTitle title="kontakt" />
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>

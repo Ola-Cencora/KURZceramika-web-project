@@ -1,8 +1,7 @@
 const Gallery = () => {
     return (
         <>
-        <h1>Gallery</h1>
-        <p>xyz</p>
+        <p>galeria</p>
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>
