@@ -1,0 +1,28 @@
+@import "../../../styles/settings.scss";
+
+.button {
+    background-color: $color-main;
+    border: none;
+    color: $color-light;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    padding: $base-size ($base-size * 3);
+    border-radius: $radius;
+
+    &:hover {
+        color: $color-special;
+    }
+}
+
+.buttonGallery {
+    @extend .button;
+    background-color: $color-light;
+    color: $color-main;
+}
+
+.buttonTop {
+    @extend .button;
+    background-color: $color-special;
+    color: $color-light;
+}
