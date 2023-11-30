@@ -52,7 +52,13 @@ const Navigation = ({ scrollToSection, aboutRef, galleryRef, contactRef, newslet
 
     return (
         <Navbar className={styles.navigation} fixed="top" expand="md">
-            <Navbar.Brand>logo</Navbar.Brand>
+            <Navbar.Brand>
+                <img
+                    src={`${process.env.PUBLIC_URL}/images/kurz-logo.svg`}
+                    alt="KURZ ceramika logo"
+                    className={styles.logo}
+                />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.icon}><FontAwesomeIcon icon={faBars} className={styles.burgerMenu}/></Navbar.Toggle>
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                 <Nav className="ml-auto">

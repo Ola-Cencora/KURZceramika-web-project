@@ -2,6 +2,11 @@
 
 .navigation {
     list-style: none;
+    margin: 0 $base-size * 3;
+
+    .logo {
+        height: $base-size * 3;
+    }
 
     .link {
         text-decoration: none;
