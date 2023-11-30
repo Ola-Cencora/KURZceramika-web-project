@@ -18,3 +18,17 @@
         }
     }
 }
+
+.icon {
+    border: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.burgerMenu {
+    color: $color-main;
+    height: $base-size * 3;
+}

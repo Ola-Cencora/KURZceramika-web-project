@@ -3,6 +3,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Dot from '../../common/Dot/Dot';
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = ({ scrollToSection, aboutRef, galleryRef, contactRef, newsletterRef }) => {
     const [activeLink, setActiveLink] = useState('');
@@ -40,6 +42,7 @@ const Navigation = ({ scrollToSection, aboutRef, galleryRef, contactRef, newslet
         if (sectionRef && scrollToSection) {
             scrollToSection(sectionRef);
         }
+        document.querySelector('.navbar-collapse').classList.remove('show');
     };
 
     useEffect(() => {
@@ -48,10 +51,10 @@ const Navigation = ({ scrollToSection, aboutRef, galleryRef, contactRef, newslet
     }, []);
 
     return (
-        <Navbar className={styles.navigation} fixed="top">
+        <Navbar className={styles.navigation} fixed="top" expand="md">
             <Navbar.Brand>logo</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.icon}><FontAwesomeIcon icon={faBars} className={styles.burgerMenu}/></Navbar.Toggle>
+            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                 <Nav className="ml-auto">
                     <Nav.Link className={styles.link}>
                         <li onClick={() => handleLinkClick('about', aboutRef)}>
