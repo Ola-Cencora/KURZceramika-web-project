@@ -1,0 +1,17 @@
+@import "../../../styles/settings.scss";
+
+.header {
+    background-image: url('../../../../public/images/hero.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    &::after {
+        content: "";
+        background-color: $color-main;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.4;
+    }
+}
