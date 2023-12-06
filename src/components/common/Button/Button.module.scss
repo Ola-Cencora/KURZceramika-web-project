@@ -19,6 +19,12 @@
     @extend .button;
     background-color: $color-light;
     color: $color-main;
+
+    @media (max-width: 991px) {
+        background-color: $color-main;
+        color: $color-light;
+    }
+
 }
 
 .buttonTop {

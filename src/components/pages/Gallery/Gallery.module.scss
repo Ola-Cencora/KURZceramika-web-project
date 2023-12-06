@@ -1,0 +1,25 @@
+@import "../../../styles/settings.scss";
+
+.gallery {
+
+    .left {
+        height: 30vh;
+        background-color: $color-main;
+
+        Button {
+            display: flex;
+            margin: 0 auto;
+            position: relative;
+            bottom: -70%;
+        }
+
+        @media (max-width: 991px) {
+            background-color: $color-light;
+        }
+    }
+    
+    .right {
+        height: 30vh;
+        background-color: $color-light;
+    }
+}

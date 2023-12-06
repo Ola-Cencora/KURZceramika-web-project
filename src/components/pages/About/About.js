@@ -18,13 +18,13 @@ const About = () => {
     return (
         <div className={clsx(styles.about, 'container-fluid')}>
             <Row>
-                <Col md={6} xs={12} className={clsx(styles.aboutImg, 'order-md-1 order-1')}>
+                <Col lg={6} xs={12} className={clsx(styles.aboutImg, 'order-lg-1 order-1')}>
                     <img
                         src={`${process.env.PUBLIC_URL}/images/about.jpg`}
                         alt="zdjęcie o mnie"
                     />
                 </Col>
-                <Col md={6} xs={12} className={clsx(styles.aboutTxt, 'order-md-2 order-2')}>
+                <Col lg={6} xs={12} className={clsx(styles.aboutTxt, 'order-lg-2 order-2')}>
                     <SectionTitle title="o mnie" />
                     <p>{text}</p>
                 </Col>
