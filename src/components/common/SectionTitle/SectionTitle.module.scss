@@ -1,6 +1,10 @@
+@import "../../../styles/settings.scss";
+
 .row {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: $base-size * 4;
 
     .title {
         font-size: 22px;

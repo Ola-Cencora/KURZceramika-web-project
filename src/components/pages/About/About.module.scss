@@ -1,0 +1,40 @@
+@import "../../../styles/settings.scss";
+
+.about {
+
+    .aboutImg {
+        position: relative;
+        height: 100vh;
+        background-color: $color-main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::after { 
+            content: "";
+            background-color: $color-main;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0.2;
+        }
+
+        img {
+            max-width: 70%;
+            object-fit: cover;
+        }
+    }
+
+    .aboutTxt {
+        height: 100vh;
+        background-color: $color-light;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            max-width: 70%;
+            text-align: center;
+        }
+    }
+}
