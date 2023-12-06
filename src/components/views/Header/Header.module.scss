@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .header {
-    background-image: url('../../../../public/images/hero.jpg');
+    background-image: $hero-image;
     height: 100vh;
     background-size: cover;
     background-position: top;
