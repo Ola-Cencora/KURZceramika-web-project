@@ -5,7 +5,7 @@ const Newsletter = () => {
     return (
         <>
         <SectionTitle title="newsletter" />
-        <Button title="zapisz się" />
+        <Button content="zapisz się" />
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>

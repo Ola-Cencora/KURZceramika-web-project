@@ -1,12 +1,18 @@
 import styles from './Button.module.scss';
 
-const Button = ({ title, color }) => {
+const Button = ({ content, variant }) => {
     
-    const buttonColor = color === 'gallery' ? styles.buttonGallery : styles.button;
+    let buttonColor = styles.button;
+
+    if(variant === 'gallery') {
+        buttonColor = styles.buttonGallery;
+    } else if (variant === 'top') {
+        buttonColor = styles.buttonTop;
+    }
 
     return (
         <button className={buttonColor}>
-            {title}
+            {content}
         </button>
     );
 };

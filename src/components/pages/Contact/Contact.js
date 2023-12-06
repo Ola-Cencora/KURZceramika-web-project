@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <>
         <SectionTitle title="kontakt" />
-        <Button title="wyślij" />
+        <Button content="wyślij" />
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>

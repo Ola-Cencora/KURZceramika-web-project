@@ -4,7 +4,7 @@ const Gallery = () => {
     return (
         <>
         <p>galeria</p>
-        <Button title="zobacz więcej na Instagramie" color="gallery" />
+        <Button content="zobacz więcej na Instagramie" variant="gallery" />
         <p>xyz</p>
         <p>xyz</p>
         <p>xyz</p>
