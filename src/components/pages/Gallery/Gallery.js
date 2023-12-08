@@ -1,4 +1,5 @@
 import Button from "../../common/Button/Button";
+import GallerySlider from "../../features/GallerySlider/GallerySlider";
 import { Row, Col } from "react-bootstrap";
 import clsx from "clsx";
 import styles from './Gallery.module.scss'
@@ -12,6 +13,7 @@ const Gallery = () => {
                 </Col>
                 <Col lg={6} xs={12} className={clsx(styles.right, 'd-none d-lg-block order-2')}></Col>
             </Row>
+            <GallerySlider />
         </div>
     );
 };
