@@ -8,7 +8,7 @@ const GallerySlider = () => {
     slidesToShow: 4,
     slidesToScroll: 0.5,
     autoplay: true,
-    autoplaySpeed: -10,
+    autoplaySpeed: 0,
     cssEase: "linear",
     pauseOnHover: true,
     swipeToSlide: true,

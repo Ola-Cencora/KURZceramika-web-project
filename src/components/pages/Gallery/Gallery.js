@@ -6,21 +6,30 @@ import styles from "./Gallery.module.scss";
 
 const Gallery = () => {
   return (
-    <div className={styles.gallery}>
-      <Row>
-        <Col lg={6} xs={12} className={clsx(styles.left, "order-1")}>
-          <Button
-            content="zobacz więcej na Instagramie"
-            variant="gallery"
-            className={styles.button}
-          />
-        </Col>
-        <Col
-          lg={6}
-          xs={12}
-          className={clsx(styles.right, "d-none d-lg-block order-2")}
-        ></Col>
-      </Row>
+    <div>
+      <div className={clsx(styles.gallery, "container-fluid")}>
+        <Row>
+          <Col
+            lg={6}
+            xs={12}
+            className={clsx(styles.left, "order-1 container-fluid")}
+          >
+            <Button
+              content="zobacz więcej na Instagramie"
+              variant="gallery"
+              className={styles.button}
+            />
+          </Col>
+          <Col
+            lg={6}
+            xs={12}
+            className={clsx(
+              styles.right,
+              "d-none d-lg-block order-2 container-fluid"
+            )}
+          ></Col>
+        </Row>
+      </div>
       <GallerySlider />
     </div>
   );
