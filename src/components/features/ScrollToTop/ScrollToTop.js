@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "../../common/Button/Button";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpLong } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpLong } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollToTop = () => {
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
@@ -33,7 +33,7 @@ const ScrollToTop = () => {
     <div>
       {showScrollTopButton && (
         <div onClick={scrollTop}>
-          <Button content={<FontAwesomeIcon icon={faUpLong} />} variant="top"/>
+          <Button content={<FontAwesomeIcon icon={faUpLong} />} variant="top" />
         </div>
       )}
     </div>
