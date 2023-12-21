@@ -12,6 +12,7 @@ const GallerySlider = () => {
     cssEase: "linear",
     pauseOnHover: true,
     swipeToSlide: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1025,
@@ -35,7 +36,7 @@ const GallerySlider = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className={styles.slider}>
       <div className={styles.photo}>
         <img
           src={`${process.env.PUBLIC_URL}/images/gallery/gallery-1.jpg`}

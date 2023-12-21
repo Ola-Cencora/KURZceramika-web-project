@@ -1,25 +1,29 @@
 @import "../../../styles/settings.scss";
 
-.photo {
-    position: relative;
-
-    &::after { 
-        content: "";
-        background-color: $color-main;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        opacity: 0.3;
-        top: 0;
-    }
+.slider {
+    line-height: 0;
     
-    &:hover::after {
-        opacity: 0;
-    }
-
-    img {
-        height: 70vh;
-        width: auto;
-        object-fit: cover;        
+    .photo {
+        position: relative;
+    
+        &::after { 
+            content: "";
+            background-color: $color-main;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0.3;
+            top: 0;
+        }
+        
+        &:hover::after {
+            opacity: 0;
+        }
+    
+        img {
+            height: 70vh;
+            width: auto;
+            object-fit: cover;        
+        }
     }
 }
