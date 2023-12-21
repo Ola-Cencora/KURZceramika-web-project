@@ -6,7 +6,9 @@
     background-size: cover;
     background-position: bottom;
     position: relative;
-    z-index: -2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &::after {
         content: "";
         background-color: $color-main;
@@ -15,6 +17,27 @@
         width: 100%;
         opacity: 0.4;
         top: 0;
-        z-index: -1;
     }
+
+    .col {
+        z-index: 2;
+
+        .contact, .newsletter {
+            background-color: $color-light;
+            display: flex;
+            flex-direction: column;
+            padding: 8%;
+        }
+    
+        .contact {
+            margin: 0 5em 0 10em;
+        }
+    
+        .newsletter {
+            margin: 0 10em 0 5em;
+        }
+    
+    }
+
+
 }

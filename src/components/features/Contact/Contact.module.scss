@@ -1,0 +1,15 @@
+@import "../../../styles/settings.scss";
+
+.form {
+    text-align: center;
+
+    .input {
+        background-color: $color-light;
+        border-color: $color-main;
+    }
+
+    Button {
+        margin-top: $base-size * 2;
+    }
+}
+
