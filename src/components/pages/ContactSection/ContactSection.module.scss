@@ -2,7 +2,6 @@
 
 .contactSection {
     background-image: $contact-image;
-    height: 100vh;
     background-size: cover;
     background-position: bottom;
     position: relative;
@@ -19,25 +18,40 @@
         top: 0;
     }
 
+    @media screen and (max-width: 767px) {
+        padding-top: 5em;
+    }
+
+
     .col {
         z-index: 2;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+            height: 70vh;
+        }
 
         .contact, .newsletter {
             background-color: $color-light;
             display: flex;
             flex-direction: column;
             padding: 8%;
+            margin: auto 5em;
+            width: 80%;        
         }
-    
+
         .contact {
-            margin: 0 5em 0 10em;
+            @media screen and (max-width: 767px) {
+                margin-bottom: 2em;
+            }
         }
-    
+
         .newsletter {
-            margin: 0 10em 0 5em;
+            @media screen and (max-width: 767px) {
+                margin-top: 2em;
+            }
         }
-    
     }
-
-
 }

@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 const ContactSection = () => {
   return (
-    <div className={styles.contactSection}>
+    <div className={clsx(styles.contactSection, "container-fluid")}>
       <Row className="d-flex align-items-center">
         <Col lg={6} xs={12} className={clsx("order-lg-1 order-1", styles.col)}>
           <div id="contact" className={styles.contact}>
