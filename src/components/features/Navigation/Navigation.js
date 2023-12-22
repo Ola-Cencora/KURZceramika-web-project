@@ -9,36 +9,6 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 const Navigation = () => {
   const [activeLink, setActiveLink] = useState("");
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY + 100;
-    const aboutSection = document.getElementById("about");
-    const gallerySection = document.getElementById("gallery");
-    const contactSection = document.getElementById("contact");
-    const newsletterSection = document.getElementById("newsletter");
-
-    const sections = [
-      { id: "about", ref: aboutSection },
-      { id: "gallery", ref: gallerySection },
-      { id: "contact", ref: contactSection },
-      { id: "newsletter", ref: newsletterSection },
-    ];
-
-    let activeSection = "";
-
-    sections.forEach((section) => {
-      if (section.ref && section.ref.offsetTop <= scrollPosition) {
-        activeSection = section.id;
-      }
-    });
-
-    setActiveLink(activeSection);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const handleLinkClick = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -46,6 +16,33 @@ const Navigation = () => {
       setActiveLink(id);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["about", "gallery", "contact", "newsletter"];
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition <= window.innerHeight * 0.5) {
+        setActiveLink("");
+      }
+
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const { top, bottom } = section.getBoundingClientRect();
+
+          if (top - 100 <= 0 && bottom >= 100) {
+            setActiveLink(sectionId);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Navbar className={styles.navigation} fixed="top" expand="md">
@@ -86,7 +83,7 @@ const Navigation = () => {
           </Nav.Link>
           <Nav.Link className={styles.link}>
             <li onClick={() => handleLinkClick("newsletter")}>
-              <Dot isActive={activeLink === "newsletter"} />
+              <Dot isActive={activeLink === "contact"} />
               Newsletter
             </li>
           </Nav.Link>
