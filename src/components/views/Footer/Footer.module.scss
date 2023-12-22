@@ -1,0 +1,34 @@
+@import "../../../styles/settings.scss";
+
+.footer {
+    height: 6vh;
+    background-color: $color-main;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .iconsList {
+        display: flex;
+        list-style: none;
+        margin: 0 0 0 .5em;
+        padding: 0;
+
+        .icon {
+            height: $base-size * 2.1;
+            color: $color-light;
+            margin: .5em;
+            &:hover {
+                color: $color-special;
+            }
+        }
+    }
+
+    .copyright {
+
+        p {
+            margin: 0;
+            color: $color-light;
+            padding-right: 5em;
+        }
+    }
+}

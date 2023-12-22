@@ -3,6 +3,7 @@ import Gallery from "./components/pages/Gallery/Gallery";
 import ScrollToTop from "./components/features/ScrollToTop/ScrollToTop";
 import Header from "./components/views/Header/Header";
 import ContactSection from "./components/pages/ContactSection/ContactSection";
+import Footer from "./components/views/Footer/Footer";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Gallery />
       </div>
       <ContactSection />
+      <Footer />
     </div>
   );
 }
