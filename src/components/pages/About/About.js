@@ -5,6 +5,7 @@ import styles from "./About.module.scss";
 import clsx from "clsx";
 import AboutText from "./about.txt";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const [text, setText] = useState("");
@@ -36,7 +37,9 @@ const About = () => {
         >
           <SectionTitle title="o mnie" />
           <p>{text}</p>
-          <Button variant="more" content="czytaj więcej" />
+          <Link to="/about">
+            <Button variant="more" content="czytaj więcej" />
+          </Link>
         </Col>
       </Row>
     </div>
