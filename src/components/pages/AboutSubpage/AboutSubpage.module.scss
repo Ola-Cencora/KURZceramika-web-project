@@ -1,0 +1,36 @@
+@import "../../../styles/settings.scss";
+
+.aboutSubpage {
+    min-height: 100vh;
+    background-image: $hero-image;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    &::after {
+        content: "";
+        background-color: $color-main;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.4;
+        top: 0;
+    }
+
+    .aboutTxt {
+        background-color: $color-light;
+        z-index: 2;
+        position: relative;
+        padding: 10%;
+
+        p {
+            text-indent: 10%;
+        }
+    }
+
+    Button {
+        position: fixed;
+        bottom: 7%;
+        left: 5%;
+    }
+
+}
