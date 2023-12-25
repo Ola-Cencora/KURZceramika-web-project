@@ -14,11 +14,13 @@ const Gallery = () => {
             xs={12}
             className={clsx(styles.left, "order-1 container-fluid")}
           >
-            <Button
-              content="zobacz więcej na Instagramie"
-              variant="gallery"
-              className={styles.button}
-            />
+            <a href="https://www.instagram.com/kurz.ceramika/">
+              <Button
+                content="zobacz więcej zdjęć na Instagramie"
+                variant="gallery"
+                className={styles.button}
+              />
+            </a>
           </Col>
           <Col
             lg={6}
