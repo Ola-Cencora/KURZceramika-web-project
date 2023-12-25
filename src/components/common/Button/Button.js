@@ -8,6 +8,8 @@ const Button = ({ content, variant }) => {
     buttonColor = styles.buttonGallery;
   } else if (variant === "top") {
     buttonColor = styles.buttonTop;
+  } else if (variant === "more") {
+    buttonColor = styles.buttonMore;
   }
 
   return <button className={buttonColor}>{content}</button>;
@@ -15,7 +17,7 @@ const Button = ({ content, variant }) => {
 
 Button.propTypes = {
   content: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(["gallery", "top"]).isRequired,
+  variant: PropTypes.oneOf(["gallery", "top", "more"]),
 };
 
 export default Button;

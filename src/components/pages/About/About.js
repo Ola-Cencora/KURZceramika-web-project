@@ -1,4 +1,5 @@
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
+import Button from "../../common/Button/Button";
 import { Row, Col } from "react-bootstrap";
 import styles from "./About.module.scss";
 import clsx from "clsx";
@@ -35,6 +36,7 @@ const About = () => {
         >
           <SectionTitle title="o mnie" />
           <p>{text}</p>
+          <Button variant="more" content="czytaj więcej" />
         </Col>
       </Row>
     </div>

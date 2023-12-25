@@ -46,3 +46,14 @@
     }
 
 }
+
+.buttonMore {
+    @extend .button;
+    background-color: $color-special;
+    margin-top: $base-size * 2;
+    &:hover {
+        background-color: $color-main;
+        color: $color-light;
+    }
+
+}
