@@ -1,0 +1,10 @@
+@import "../../../styles/settings.scss";
+
+.notFound {
+    background-color: $color-light;
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
