@@ -1,37 +1,71 @@
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import Button from "../../common/Button/Button";
 import { Form } from "react-bootstrap";
-import { useState } from "react";
-import styles from "./Newsletter.module.scss"
+import styles from "./Newsletter.module.scss";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Newsletter = () => {
-  const [validated, setValidated] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+    },
 
-  const handleSubmit = (e) => {
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+    validationSchema: yup.object({
+      name: yup.string().required("Halo! Jak Ci na imię? :)"),
+      email: yup
+        .string()
+        .email("Halo! Pamiętaj o prawidłowym adresie email :)")
+        .required("Halo! Pamiętaj o prawidłowym adresie email :)"),
+    }),
 
-    setValidated(true);
-  };
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   return (
     <>
       <SectionTitle title="newsletter" />
-      <Form noValidate validated={validated} onSubmit={handleSubmit} className={styles.form}>
+      <Form noValidate onSubmit={formik.handleSubmit} className={styles.form}>
         <Form.Group className="my-2">
-          <Form.Control required type="text" placeholder="Twoje imię" className={styles.input} />
-          <Form.Control.Feedback type="invalid">
-            Halo! Jak Ci na imię? :)
-          </Form.Control.Feedback>
+          <Form.Control
+            type="text"
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            placeholder={
+              formik.touched.name && formik.errors.name
+                ? formik.errors.name
+                : "Twoje imię"
+            }
+            className={
+              formik.touched.name && formik.errors.name
+                ? styles.inputInvalid
+                : styles.input
+            }
+            onBlur={formik.handleBlur}
+          />
         </Form.Group>
         <Form.Group className="my-2">
-          <Form.Control required type="email" placeholder="Twój email" className={styles.input} />
-          <Form.Control.Feedback type="invalid">
-            Halo! Pamiętaj o podaniu adresu email w formacie abc@xyz.com :)
-          </Form.Control.Feedback>
+          <Form.Control
+            type="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            placeholder={
+              formik.touched.email && formik.errors.email
+                ? formik.errors.email
+                : "Twój email"
+            }
+            className={
+              formik.touched.email && formik.errors.email
+                ? styles.inputInvalid
+                : styles.input
+            }
+            onBlur={formik.handleBlur}
+          />
         </Form.Group>
         <p>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

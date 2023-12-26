@@ -1,50 +1,93 @@
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import Button from "../../common/Button/Button";
 import { Form } from "react-bootstrap";
-import { useState } from "react";
 import styles from "./Contact.module.scss";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Contact = () => {
-  const [validated, setValidated] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      request: "",
+    },
 
-  const handleSubmit = (e) => {
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+    validationSchema: yup.object({
+      name: yup.string().required("Halo! Jak Ci na imię? :)"),
+      email: yup
+        .string()
+        .email("Halo! Pamiętaj o prawidłowym adresie email :)")
+        .required("Halo! Pamiętaj o prawidłowym adresie email :)"),
+      request: yup.string().required("Halo! Jakie masz pytanie? :)"),
+    }),
 
-    setValidated(true);
-  };
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   return (
     <>
       <SectionTitle title="kontakt" />
-      <Form noValidate validated={validated} onSubmit={handleSubmit} className={styles.form}>
+      <Form noValidate onSubmit={formik.handleSubmit} className={styles.form}>
         <Form.Group className="my-2">
-          <Form.Control required type="text" placeholder="Twoje imię" className={styles.input} />
-          <Form.Control.Feedback type="invalid">
-            Halo! Jak Ci na imię? :)
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group className="my-2">
-          <Form.Control required type="email" placeholder="Twój email" className={styles.input} />
-          <Form.Control.Feedback type="invalid">
-            Halo! Pamiętaj o podaniu adresu email w formacie abc@xyz.com :)
-          </Form.Control.Feedback>
+          <Form.Control
+            type="text"
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            placeholder={
+              formik.touched.name && formik.errors.name
+                ? formik.errors.name
+                : "Twoje imię"
+            }
+            className={
+              formik.touched.name && formik.errors.name
+                ? styles.inputInvalid
+                : styles.input
+            }
+            onBlur={formik.handleBlur}
+          />
         </Form.Group>
         <Form.Group className="my-2">
           <Form.Control
-            required
-            minLength={10}
-            as="textarea"
-            placeholder="Twoje pytanie"
-            rows={10}
-            className={styles.input}
+            type="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            placeholder={
+              formik.touched.email && formik.errors.email
+                ? formik.errors.email
+                : "Twój email"
+            }
+            className={
+              formik.touched.email && formik.errors.email
+                ? styles.inputInvalid
+                : styles.input
+            }
+            onBlur={formik.handleBlur}
           />
-          <Form.Control.Feedback type="invalid">
-            Halo! Jakie masz pytanie? :)
-          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="my-2">
+          <Form.Control
+            name="request"
+            value={formik.values.request}
+            onChange={formik.handleChange}
+            as="textarea"
+            rows={10}
+            placeholder={
+              formik.touched.request && formik.errors.request
+                ? formik.errors.request
+                : "Twoje pytanie"
+            }
+            className={
+              formik.touched.request && formik.errors.request
+                ? styles.inputInvalid
+                : styles.input
+            }
+            onBlur={formik.handleBlur}
+          />
         </Form.Group>
         <Button type="submit" content="wyślij" />
       </Form>
