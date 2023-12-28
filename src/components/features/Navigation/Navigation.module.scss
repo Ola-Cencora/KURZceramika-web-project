@@ -8,6 +8,21 @@
         height: $base-size * 3;
     }
 
+    .icon {
+        border: none;
+    
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    
+        .burgerMenu {
+            color: $color-main;
+            height: $base-size * 3;
+        }
+        
+    }
+
     .link {
         text-decoration: none;
         font-family: $font-header;
@@ -21,19 +36,32 @@
         &:active {
             color: $color-dark;
         }
+    }    
+}
+
+
+.offCanvasNavigation {
+    @extend .navigation;
+    margin: 0;
+
+    .offcanvasHeader, .offcanvasBody {
+        background-color: $color-light;
+    }
+
+    .closeIcon {
+        color: $color-main;
+        height: $base-size * 3;
+        margin-left: auto;
+        &:hover {
+            color: $color-special;
+        }
+    }
+
+    .link {
+        color: $color-dark;
+        &:hover {
+            color: $color-dark;
+        }
     }
 }
 
-.icon {
-    border: none;
-
-    &:focus {
-        outline: none;
-        box-shadow: none;
-    }
-}
-
-.burgerMenu {
-    color: $color-main;
-    height: $base-size * 3;
-}
