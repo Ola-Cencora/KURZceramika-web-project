@@ -51,6 +51,13 @@ const Navigation = () => {
     };
   }, []);
 
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       {/* on screens bigger than medium */}
@@ -60,6 +67,7 @@ const Navigation = () => {
             src={`${process.env.PUBLIC_URL}/images/kurz-logo.svg`}
             alt="KURZ ceramika logo"
             className={styles.logo}
+            onClick={scrollTop}
           />
         </Navbar.Brand>
         <Navbar.Toggle
