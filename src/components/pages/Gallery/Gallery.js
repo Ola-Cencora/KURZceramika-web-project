@@ -5,7 +5,7 @@ import clsx from "clsx";
 import styles from "./Gallery.module.scss";
 
 const Gallery = () => (
-  <div>
+  <div id="gallery">
     <div className={clsx(styles.gallery, "container-fluid")}>
       <Row>
         <Col

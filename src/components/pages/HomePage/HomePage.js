@@ -6,12 +6,8 @@ import Header from "../../views/Header/Header";
 const HomePage = () => (
   <>
     <Header />
-    <div id="about">
-      <About />
-    </div>
-    <div id="gallery">
-      <Gallery />
-    </div>
+    <About />
+    <Gallery />
     <ContactSection />
   </>
 );

@@ -18,7 +18,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className={clsx(styles.about, "container-fluid")}>
+    <div id="about" className={clsx(styles.about, "container-fluid")}>
       <Row>
         <Col
           lg={6}
