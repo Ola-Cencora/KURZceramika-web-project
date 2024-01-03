@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AboutTextMore from "./about_more.txt";
+import { AboutTextMore } from "./aboutMoreTxt";
 import styles from "./AboutSubpage.module.scss";
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import Button from "../../common/Button/Button";
@@ -14,13 +14,7 @@ const AboutSubpage = () => {
   }, []);
 
   useEffect(() => {
-    fetch(AboutTextMore)
-      .then((response) => response.text())
-      .then((data) => {
-        const paragrapsArray = data.split("\n");
-        setParagraphs(paragrapsArray);
-      })
-      .catch((error) => console.error("Error fetching about text:", error));
+    setParagraphs(AboutTextMore.split("\n"));
   }, []);
 
   return (

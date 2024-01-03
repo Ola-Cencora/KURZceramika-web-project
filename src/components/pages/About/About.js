@@ -3,7 +3,7 @@ import Button from "../../common/Button/Button";
 import { Row, Col } from "react-bootstrap";
 import styles from "./About.module.scss";
 import clsx from "clsx";
-import AboutText from "./about.txt";
+import { AboutText } from "./aboutTxt";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,10 +11,7 @@ const About = () => {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    fetch(AboutText)
-      .then((response) => response.text())
-      .then((data) => setText(data))
-      .catch((error) => console.error("Error fetching about text:", error));
+    setText(AboutText);
   }, []);
 
   return (
