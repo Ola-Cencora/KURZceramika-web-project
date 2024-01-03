@@ -7,7 +7,7 @@ import {
 
 const Footer = () => (
   <footer className={styles.footer}>
-    <div className={styles.iconsBar}>
+    <div>
       <ul className={styles.iconsList}>
         <li>
           <a href="https://www.instagram.com/kurz.ceramika/">

@@ -6,15 +6,19 @@ import Dot from "../../common/Dot/Dot";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInstagram,
+  faFacebookSquare,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Navigation = () => {
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState("");
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
   const handleLinkClick = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
       setActiveLink(id);
       setShowOffcanvas(false);
     }
@@ -22,11 +26,11 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'gallery', 'contact', 'newsletter'];
+      const sections = ["about", "gallery", "contact", "newsletter"];
       const scrollPosition = window.scrollY;
 
       if (scrollPosition <= window.innerHeight * 0.5) {
-        setActiveLink('');
+        setActiveLink("");
       }
 
       sections.forEach((sectionId) => {
@@ -41,9 +45,9 @@ const Navigation = () => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -74,25 +78,25 @@ const Navigation = () => {
         >
           <Nav className="ml-auto">
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('about')}>
-                <Dot isActive={activeLink === 'about'} />O mnie
+              <li onClick={() => handleLinkClick("about")}>
+                <Dot isActive={activeLink === "about"} />O mnie
               </li>
             </Nav.Link>
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('gallery')}>
-                <Dot isActive={activeLink === 'gallery'} />
+              <li onClick={() => handleLinkClick("gallery")}>
+                <Dot isActive={activeLink === "gallery"} />
                 Galeria
               </li>
             </Nav.Link>
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('contact')}>
-                <Dot isActive={activeLink === 'contact'} />
+              <li onClick={() => handleLinkClick("contact")}>
+                <Dot isActive={activeLink === "contact"} />
                 Kontakt
               </li>
             </Nav.Link>
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('newsletter')}>
-                <Dot isActive={activeLink === 'contact'} />
+              <li onClick={() => handleLinkClick("newsletter")}>
+                <Dot isActive={activeLink === "contact"} />
                 Newsletter
               </li>
             </Nav.Link>
@@ -101,35 +105,67 @@ const Navigation = () => {
       </Navbar>
 
       {/* on screens smaller than medium */}
-      <Offcanvas className={styles.offCanvasNavigation} placement="end" show={showOffcanvas} onHide={() => setShowOffcanvas(false)}>
-        <Offcanvas.Header closeButton={false} className={styles.offcanvasHeader}>
-          <FontAwesomeIcon icon={faX} onClick={() => setShowOffcanvas(false)} className={styles.closeIcon} />
+      <Offcanvas
+        className={styles.offCanvasNavigation}
+        placement="end"
+        show={showOffcanvas}
+        onHide={() => setShowOffcanvas(false)}
+      >
+        <Offcanvas.Header
+          closeButton={false}
+          className={styles.offcanvasHeader}
+        >
+          <FontAwesomeIcon
+            icon={faX}
+            onClick={() => setShowOffcanvas(false)}
+            className={styles.closeIcon}
+          />
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.offcanvasBody}>
           <Nav className="flex-column">
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('about')}>
-                <Dot isActive={activeLink === 'about'} />O mnie
+              <li onClick={() => handleLinkClick("about")}>
+                <Dot isActive={activeLink === "about"} />O mnie
               </li>
             </Nav.Link>
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('gallery')}>
-                <Dot isActive={activeLink === 'gallery'} />
+              <li onClick={() => handleLinkClick("gallery")}>
+                <Dot isActive={activeLink === "gallery"} />
                 Galeria
               </li>
             </Nav.Link>
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('contact')}>
-                <Dot isActive={activeLink === 'contact'} />
+              <li onClick={() => handleLinkClick("contact")}>
+                <Dot isActive={activeLink === "contact"} />
                 Kontakt
               </li>
             </Nav.Link>
             <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick('newsletter')}>
-                <Dot isActive={activeLink === 'contact'} />
+              <li onClick={() => handleLinkClick("newsletter")}>
+                <Dot isActive={activeLink === "contact"} />
                 Newsletter
               </li>
             </Nav.Link>
+            <div>
+              <ul className={styles.iconsList}>
+                <li>
+                  <a href="https://www.instagram.com/kurz.ceramika/">
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className={styles.icon}
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/kurz.ceramika/">
+                    <FontAwesomeIcon
+                      icon={faFacebookSquare}
+                      className={styles.icon}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

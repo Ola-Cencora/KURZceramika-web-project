@@ -63,5 +63,19 @@
             color: $color-dark;
         }
     }
+
+    .iconsList {
+        display: flex;
+        list-style: none;
+        padding: 8px 16px;
+        margin-left: 36px;
+
+        .icon {
+            height: $base-size * 2.1;
+            color: $color-main;
+            margin: .5em;
+        }
+    }
+
 }
 
