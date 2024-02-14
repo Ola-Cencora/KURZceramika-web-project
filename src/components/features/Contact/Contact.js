@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap";
 import styles from "./Contact.module.scss";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Fade } from "react-awesome-reveal";
 
 const Contact = () => {
   const formik = useFormik({
@@ -28,7 +29,7 @@ const Contact = () => {
   });
 
   return (
-    <>
+    <Fade cascade direction="up" triggerOnce>
       <SectionTitle title="kontakt" />
       <Form noValidate onSubmit={formik.handleSubmit} className={styles.form}>
         <Form.Group className="my-2">
@@ -91,7 +92,7 @@ const Contact = () => {
         </Form.Group>
         <Button type="submit" content="wyślij" />
       </Form>
-    </>
+    </Fade>
   );
 };
 

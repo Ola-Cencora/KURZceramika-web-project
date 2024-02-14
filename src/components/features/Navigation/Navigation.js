@@ -10,6 +10,7 @@ import {
   faInstagram,
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { Fade } from "react-awesome-reveal";
 
 const Navigation = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -62,14 +63,16 @@ const Navigation = () => {
     <>
       {/* on screens bigger than medium */}
       <Navbar className={styles.navigation} fixed="top" expand="md">
-        <Navbar.Brand>
-          <img
-            src={`${process.env.PUBLIC_URL}/images/kurz-logo.svg`}
-            alt="KURZ ceramika logo"
-            className={styles.logo}
-            onClick={scrollTop}
-          />
-        </Navbar.Brand>
+        <Fade direction="up" triggerOnce>
+          <Navbar.Brand>
+            <img
+              src={`${process.env.PUBLIC_URL}/images/kurz-logo.svg`}
+              alt="KURZ ceramika logo"
+              className={styles.logo}
+              onClick={scrollTop}
+            />
+          </Navbar.Brand>
+        </Fade>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className={styles.icon}
@@ -85,29 +88,31 @@ const Navigation = () => {
           className="justify-content-end d-none d-md-block"
         >
           <Nav className="ml-auto">
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("about")}>
-                <Dot isActive={activeLink === "about"} />O mnie
-              </li>
-            </Nav.Link>
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("gallery")}>
-                <Dot isActive={activeLink === "gallery"} />
-                Galeria
-              </li>
-            </Nav.Link>
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("contact")}>
-                <Dot isActive={activeLink === "contact"} />
-                Kontakt
-              </li>
-            </Nav.Link>
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("newsletter")}>
-                <Dot isActive={activeLink === "contact"} />
-                Newsletter
-              </li>
-            </Nav.Link>
+            <Fade cascade damping={0.1} direction="up" triggerOnce>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("about")}>
+                  <Dot isActive={activeLink === "about"} />O mnie
+                </li>
+              </Nav.Link>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("gallery")}>
+                  <Dot isActive={activeLink === "gallery"} />
+                  Galeria
+                </li>
+              </Nav.Link>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("contact")}>
+                  <Dot isActive={activeLink === "contact"} />
+                  Kontakt
+                </li>
+              </Nav.Link>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("newsletter")}>
+                  <Dot isActive={activeLink === "contact"} />
+                  Newsletter
+                </li>
+              </Nav.Link>
+            </Fade>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -131,49 +136,51 @@ const Navigation = () => {
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.offcanvasBody}>
           <Nav className="flex-column">
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("about")}>
-                <Dot isActive={activeLink === "about"} />O mnie
-              </li>
-            </Nav.Link>
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("gallery")}>
-                <Dot isActive={activeLink === "gallery"} />
-                Galeria
-              </li>
-            </Nav.Link>
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("contact")}>
-                <Dot isActive={activeLink === "contact"} />
-                Kontakt
-              </li>
-            </Nav.Link>
-            <Nav.Link className={styles.link}>
-              <li onClick={() => handleLinkClick("newsletter")}>
-                <Dot isActive={activeLink === "contact"} />
-                Newsletter
-              </li>
-            </Nav.Link>
-            <div>
-              <ul className={styles.iconsList}>
-                <li>
-                  <a href="https://www.instagram.com/kurz.ceramika/">
-                    <FontAwesomeIcon
-                      icon={faInstagram}
-                      className={styles.icon}
-                    />
-                  </a>
+            <Fade cascade damping={0.01} direction="up" triggerOnce>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("about")}>
+                  <Dot isActive={activeLink === "about"} />O mnie
                 </li>
-                <li>
-                  <a href="https://www.facebook.com/kurz.ceramika/">
-                    <FontAwesomeIcon
-                      icon={faFacebookSquare}
-                      className={styles.icon}
-                    />
-                  </a>
+              </Nav.Link>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("gallery")}>
+                  <Dot isActive={activeLink === "gallery"} />
+                  Galeria
                 </li>
-              </ul>
-            </div>
+              </Nav.Link>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("contact")}>
+                  <Dot isActive={activeLink === "contact"} />
+                  Kontakt
+                </li>
+              </Nav.Link>
+              <Nav.Link className={styles.link}>
+                <li onClick={() => handleLinkClick("newsletter")}>
+                  <Dot isActive={activeLink === "contact"} />
+                  Newsletter
+                </li>
+              </Nav.Link>
+              <div>
+                <ul className={styles.iconsList}>
+                  <li>
+                    <a href="https://www.instagram.com/kurz.ceramika/">
+                      <FontAwesomeIcon
+                        icon={faInstagram}
+                        className={styles.icon}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/kurz.ceramika/">
+                      <FontAwesomeIcon
+                        icon={faFacebookSquare}
+                        className={styles.icon}
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </Fade>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

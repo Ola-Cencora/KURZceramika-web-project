@@ -9,6 +9,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         &::after { 
             content: "";
             background-color: $color-main;
@@ -35,6 +36,7 @@
         p {
             max-width: 60%;
             text-align: center;
+            margin: 0 auto;
         }
     }
 }

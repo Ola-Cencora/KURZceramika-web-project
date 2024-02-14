@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap";
 import styles from "./Newsletter.module.scss";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Fade } from "react-awesome-reveal";
 
 const Newsletter = () => {
   const formik = useFormik({
@@ -26,7 +27,7 @@ const Newsletter = () => {
   });
 
   return (
-    <>
+    <Fade cascade direction="up" triggerOnce>
       <SectionTitle title="newsletter" />
       <Form noValidate onSubmit={formik.handleSubmit} className={styles.form}>
         <Form.Group className="my-2">
@@ -73,7 +74,7 @@ const Newsletter = () => {
         </p>
         <Button type="submit" content="zapisz się" />
       </Form>
-    </>
+    </Fade>
   );
 };
 
