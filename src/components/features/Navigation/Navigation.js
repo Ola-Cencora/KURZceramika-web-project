@@ -102,13 +102,21 @@ const Navigation = () => {
               </Nav.Link>
               <Nav.Link className={styles.link}>
                 <li onClick={() => handleLinkClick("contact")}>
-                  <Dot isActive={activeLink === "contact"} />
+                  <Dot
+                    isActive={
+                      activeLink === "newsletter" || activeLink === "contact"
+                    }
+                  />
                   Kontakt
                 </li>
               </Nav.Link>
               <Nav.Link className={styles.link}>
                 <li onClick={() => handleLinkClick("newsletter")}>
-                  <Dot isActive={activeLink === "contact"} />
+                  <Dot
+                    isActive={
+                      activeLink === "newsletter" || activeLink === "contact"
+                    }
+                  />
                   Newsletter
                 </li>
               </Nav.Link>
