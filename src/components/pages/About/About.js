@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import Button from "../../common/Button/Button";
 import { Row, Col } from "react-bootstrap";
@@ -9,19 +9,31 @@ import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
 const About = () => {
-  const [text, setText] = useState("");
+  const [paragraphs, setParagraphs] = useState([]);
+  const aboutRef = useRef(null);
 
   useEffect(() => {
-    setText(AboutText);
+    setParagraphs(AboutText.split("\n"));
+  }, []);
+
+  useEffect(() => {
+    if (aboutRef.current) {
+      const yOffset = aboutRef.current.offsetTop;
+      window.scrollTo(0, yOffset);
+    }
   }, []);
 
   return (
-    <div id="about" className={clsx(styles.about, "container-fluid")}>
+    <div
+      id="about"
+      ref={aboutRef}
+      className={clsx(styles.about, "container-fluid")}
+    >
       <Row>
         <Col
           lg={6}
           xs={12}
-          className={clsx(styles.aboutImg, "order-lg-1 order-1")}
+          className={clsx(styles.aboutImg, "d-none d-lg-flex order-1")}
         >
           <Fade direction="up" triggerOnce>
             <img
@@ -37,8 +49,13 @@ const About = () => {
         >
           <Fade cascade direction="up" triggerOnce>
             <SectionTitle title="o mnie" />
-            <p>{text}</p>
-            <Link to="/about">
+            {paragraphs.map((paragraph, index) => (
+              <>
+                <p key={index}>{paragraph}</p>
+                <br />
+              </>
+            ))}
+            <Link to="/omnie">
               <Button variant="more" content="czytaj więcej" />
             </Link>
           </Fade>

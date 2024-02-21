@@ -11,7 +11,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutSubpage />} />
+        <Route path="/omnie" element={<AboutSubpage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
