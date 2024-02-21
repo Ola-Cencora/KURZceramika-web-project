@@ -1,7 +1,6 @@
 @import "../../../styles/settings.scss";
 
 .footer {
-    height: 6vh;
     background-color: $color-main;
     display: flex;
     justify-content: space-between;
@@ -32,3 +31,10 @@
         }
     }
 }
+
+@media (max-width: 425px) {
+
+    .copyright p {
+        font-size: 10px;
+    }
+  }
