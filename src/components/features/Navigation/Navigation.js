@@ -62,7 +62,7 @@ const Navigation = () => {
   return (
     <>
       {/* on screens bigger than medium */}
-      <Navbar className={styles.navigation} fixed="top" expand="md">
+      <Navbar className={styles.navigation} fixed="top" expand="lg">
         <Fade direction="up" triggerOnce>
           <Navbar.Brand>
             <img
@@ -85,7 +85,7 @@ const Navigation = () => {
         </Navbar.Toggle>
         <Navbar.Collapse
           id="responsive-navbar-nav"
-          className="justify-content-end d-none d-md-block"
+          className="justify-content-end d-none d-lg-block"
         >
           <Nav className="ml-auto">
             <Fade cascade damping={0.1} direction="up" triggerOnce>
@@ -111,7 +111,7 @@ const Navigation = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      {/* on screens smaller than medium */}
+      {/* on screens smaller than large */}
       <Offcanvas
         className={styles.offCanvasNavigation}
         placement="end"
