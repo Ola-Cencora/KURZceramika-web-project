@@ -27,7 +27,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "gallery", "contact", "newsletter"];
+      const sections = ["about", "gallery", "contact"];
       const scrollPosition = window.scrollY;
 
       if (scrollPosition <= window.innerHeight * 0.5) {
@@ -102,22 +102,8 @@ const Navigation = () => {
               </Nav.Link>
               <Nav.Link className={styles.link}>
                 <li onClick={() => handleLinkClick("contact")}>
-                  <Dot
-                    isActive={
-                      activeLink === "newsletter" || activeLink === "contact"
-                    }
-                  />
+                  <Dot isActive={activeLink === "contact"} />
                   Kontakt
-                </li>
-              </Nav.Link>
-              <Nav.Link className={styles.link}>
-                <li onClick={() => handleLinkClick("newsletter")}>
-                  <Dot
-                    isActive={
-                      activeLink === "newsletter" || activeLink === "contact"
-                    }
-                  />
-                  Newsletter
                 </li>
               </Nav.Link>
             </Fade>
@@ -160,12 +146,6 @@ const Navigation = () => {
                 <li onClick={() => handleLinkClick("contact")}>
                   <Dot isActive={activeLink === "contact"} />
                   Kontakt
-                </li>
-              </Nav.Link>
-              <Nav.Link className={styles.link}>
-                <li onClick={() => handleLinkClick("newsletter")}>
-                  <Dot isActive={activeLink === "contact"} />
-                  Newsletter
                 </li>
               </Nav.Link>
               <div>

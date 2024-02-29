@@ -4,6 +4,7 @@
     background-image: $contact-image;
     background-size: cover;
     background-position: bottom;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -18,40 +19,12 @@
         top: 0;
     }
 
-    @media screen and (max-width: 767px) {
-        padding-top: 5em;
-    }
-
-
-    .col {
-        z-index: 2;
-        height: 100vh;
+    .contact {
+        background-color: $color-light;
         display: flex;
-        align-items: center;
-
-        @media screen and (max-width: 767px) {
-            height: 70vh;
-        }
-
-        .contact, .newsletter {
-            background-color: $color-light;
-            display: flex;
-            flex-direction: column;
-            padding: 8%;
-            margin: auto 5em;
-            width: 80%;        
-        }
-
-        .contact {
-            @media screen and (max-width: 767px) {
-                margin-bottom: 2em;
-            }
-        }
-
-        .newsletter {
-            @media screen and (max-width: 767px) {
-                margin-top: 2em;
-            }
-        }
+        flex-direction: column;
+        z-index: 2;
+        justify-content: center;
+        height: 100vh;
     }
 }
