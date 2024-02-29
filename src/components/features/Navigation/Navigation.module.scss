@@ -4,9 +4,17 @@
     list-style: none;
     margin: 0 $base-size * 3;
 
+    @media (max-width: 425px) {
+        margin: 0 $base-size * 1.5;
+    }
+
     .logo {
         height: $base-size * 3;
         cursor: pointer;
+
+        @media (max-width: 425px) {
+            height: $base-size * 2;
+        }
     }
 
     .icon {
