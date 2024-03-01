@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import Button from "../../common/Button/Button";
 import { Row, Col } from "react-bootstrap";
@@ -10,23 +10,14 @@ import { Fade } from "react-awesome-reveal";
 
 const About = () => {
   const [paragraphs, setParagraphs] = useState([]);
-  const aboutRef = useRef(null);
 
   useEffect(() => {
     setParagraphs(AboutText.split("\n"));
   }, []);
 
-  useEffect(() => {
-    if (aboutRef.current) {
-      const yOffset = aboutRef.current.offsetTop;
-      window.scrollTo(0, yOffset);
-    }
-  }, []);
-
   return (
     <div
       id="about"
-      ref={aboutRef}
       className={clsx(styles.about, "container-fluid")}
     >
       <Row>

@@ -4,11 +4,12 @@ import styles from "./AboutSubpage.module.scss";
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import Button from "../../common/Button/Button";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
 
 const AboutSubpage = () => {
   const [paragraphs, setParagraphs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,9 +30,7 @@ const AboutSubpage = () => {
             ))}
           </Fade>
         </div>
-        <Link to="/">
-          <Button content="wróć do strony głównej" />
-        </Link>
+        <Button onClick={() => navigate(-1)} content="wróć do strony głównej" />
       </Container>
     </div>
   );

@@ -1,7 +1,7 @@
 import styles from "./Button.module.scss";
 import PropTypes from "prop-types";
 
-const Button = ({ content, variant }) => {
+const Button = ({ content, variant, onClick }) => {
   let buttonColor = styles.button;
 
   if (variant === "gallery") {
@@ -12,12 +12,13 @@ const Button = ({ content, variant }) => {
     buttonColor = styles.buttonMore;
   }
 
-  return <button className={buttonColor}>{content}</button>;
+  return <button className={buttonColor} onClick={onClick}>{content}</button>;
 };
 
 Button.propTypes = {
   content: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(["gallery", "top", "more"]),
+  onClick: PropTypes.func,
 };
 
 export default Button;

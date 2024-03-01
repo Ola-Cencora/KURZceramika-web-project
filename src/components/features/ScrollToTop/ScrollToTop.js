@@ -9,7 +9,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1000) {
+      if (window.scrollY > 700) {
         setShowScrollTopButton(true);
       } else {
         setShowScrollTopButton(false);

@@ -5,22 +5,21 @@
     .left {
         height: 30vh;
         background-color: $color-main;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
 
         a {
             text-decoration: none;
 
             Button {
-                display: flex;
-                margin: 0 auto;
-                position: relative;
-                bottom: -70%;
+                margin-bottom: 10%;
 
                 @media (max-width: 375px) {
-                    bottom: -58%;
+                    margin-bottom: 5%;
                 }
             }    
         }
-
 
         @media (max-width: 991px) {
             background-color: $color-light;
